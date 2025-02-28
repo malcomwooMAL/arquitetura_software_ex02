@@ -3,11 +3,20 @@ import java.util.ArrayList;
 // 4. Classe responsável por salvar pedidos no banco de dados - sequencialmente, deve ser a ultima classe a ser invocada
 public class PedidoRepository {
     //simulacao de um banco de dados utilizando um Array de Pedidos
-    private ArrayList <Pedido> invoiceArray;
+    private ArrayList <Invoice> invoiceArray;
 
-    public void
+    public PedidoRepository() {
+        this.invoiceArray = new ArrayList<Invoice>();
+    }
 
-    public void invoiceRegister(Pedido obj){
+
+    public ArrayList<Invoice> getInvoiceArray() {
+        return invoiceArray;
+    }
+
+    public void invoiceRegister(Invoice obj){
         this.invoiceArray.add(obj);
     }
+
+
 }
