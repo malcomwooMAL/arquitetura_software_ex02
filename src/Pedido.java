@@ -100,4 +100,7 @@ public class Pedido implements Invoice{
                 ", subtotal=" + subtotal +
                 ".\n";
     }
-}
+
+    //executar após os dados estarem já inseridos no banco de dados
+
+  }
