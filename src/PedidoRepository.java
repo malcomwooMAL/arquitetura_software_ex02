@@ -9,7 +9,6 @@ public class PedidoRepository {
         this.invoiceArray = new ArrayList<Invoice>();
     }
 
-
     public ArrayList<Invoice> getInvoiceArray() {
         return invoiceArray;
     }
