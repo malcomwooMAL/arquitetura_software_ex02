@@ -1,6 +1,10 @@
-//Classe ProcessadorDePedidos: Gerencia a criação e finalização de pedidos, utilizando os serviços de desconto e notificação.
+package aplicacao.pedidos;//Classe aplicacao.pedidos.ProcessadorDePedidos: Gerencia a criação e finalização de pedidos, utilizando os serviços de desconto e notificação.
 //Aqui há
-import java.util.Scanner;
+import utilidades.desconto.DescontoStrategy;
+import utilidades.desconto.DiscountCalculator;
+import utilidades.pagamentos.PaymentMethod;
+import utilidades.pagamentos.Invoice;
+import utilidades.notificaocoes.Notificator;
 
 public class ProcessadorDePedidos {
 

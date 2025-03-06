@@ -1,12 +1,22 @@
+package aplicacao.pedidos;
+
+
+import aplicacao.cliente.cliente;
+import utilidades.execoes.CompraZeradaException;
+import utilidades.execoes.IdVazioException;
+import utilidades.pagamentos.PaymentMethod;
+import utilidades.pagamentos.Invoice;
+import utilidades.notificaocoes.Notificator;
+
 //1 - Classe produto representa um pedido no sistema
 //depois que o pedido e gerado, nao e admissivel altera-lo em qualquer outra parte do codigo, salvo o seu cancelamento
 //por completo
-public class Pedido implements Invoice{
+public class Pedido implements Invoice, cliente {
 
     //instanciacao dos Modulos
     private Notificator notificator;
     private PaymentMethod paymentM;
-
+    private cliente clienteId;
     public void setNotificator(Notificator notificator) {
         this.notificator = notificator;
     }
@@ -27,7 +37,7 @@ public class Pedido implements Invoice{
     private String produtoId; //cada produto possui um numero de identificacao
     private double preco; //preco unitario
     private int quantidade;
-    private String clienteId;
+
     private int discountType;
     private int notifier; // identificacao da localizacao do produto
     private int paymentMethod;
@@ -36,18 +46,21 @@ public class Pedido implements Invoice{
     //atributo de instancia para o calculo do preco final
     private double precoFinal;
 
-    public Pedido(String produtoId, double preco, int quantidade, String clienteId, int discountType, int notifier, int paymentMethod) {
+  public Pedido(String produtoId, double preco, int quantidade, String clienteId, int discountType, int notifier, int paymentMethod) {
         this.produtoId = produtoId;
         this.preco = preco;
         this.quantidade = quantidade;
-        this.clienteId = clienteId;
+
         this.discountType = discountType;
         this.notifier = notifier;
         this.paymentMethod = paymentMethod;
         this.subtotal = this.preco * this.quantidade;
     }
 
-    public String getProdutoId() {
+    public String getProdutoId() throws IdVazioException {
+      if(produtoId == null){
+          throw new IdVazioException();
+      }
         return produtoId;
     }
 
@@ -55,13 +68,25 @@ public class Pedido implements Invoice{
         return preco;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantidade() throws CompraZeradaException{
+
+          if(quantidade == 0) {
+              throw new CompraZeradaException();
+          }
+          return quantidade;
+
+
+
+
     }
 
-    public String getClienteId() {
+    public cliente getClienteId() throws IdVazioException {
+
+      if(clienteId == null) {
+          throw new IdVazioException();
+      }
         return clienteId;
-    }
+        }
 
     public int getDiscountType() {
         return discountType;
@@ -89,7 +114,7 @@ public class Pedido implements Invoice{
 
     @Override
     public String overView() {
-        return "Pedido: \n" +
+        return "aplicacao.pedidos.Pedido: \n" +
                 "produtoId='" + produtoId + '\'' +
                 ", preco=" + preco +
                 ", quantidade=" + quantidade +

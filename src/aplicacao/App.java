@@ -1,7 +1,24 @@
+package aplicacao;
+
+import aplicacao.pedidos.Pedido;
+import aplicacao.pedidos.PedidoRepository;
+import aplicacao.pedidos.ProcessadorDePedidos;
+import utilidades.desconto.DescontoClienteComum;
+import utilidades.desconto.DescontoClienteVIp;
+import utilidades.desconto.DescontoStrategy;
+import utilidades.notificaocoes.SMSNotificator;
+import utilidades.pagamentos.BoletoMethod;
+import utilidades.pagamentos.CreditCardMethod;
+import utilidades.pagamentos.PaymentMethod;
+import utilidades.pagamentos.PixMethod;
+import utilidades.notificaocoes.EmailNotificator;
+import utilidades.pagamentos.Invoice;
+import utilidades.notificaocoes.Notificator;
+
 import java.util.Scanner;
 
 public class App {
-    //Classe ProcessadorDePedidos: Gerencia a criação e finalização de pedidos, utilizando os serviços de desconto e notificação.
+    //Classe aplicacao.pedidos.ProcessadorDePedidos: Gerencia a criação e finalização de pedidos, utilizando os serviços de desconto e notificação.
 //Aqui há
 
         public static void main(String[] args) {
