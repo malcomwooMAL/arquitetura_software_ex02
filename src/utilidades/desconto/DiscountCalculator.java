@@ -1,3 +1,5 @@
+package utilidades.desconto;
+
 public class DiscountCalculator {
 
     private DescontoStrategy descontoStrategy;

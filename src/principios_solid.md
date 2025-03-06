@@ -38,11 +38,11 @@ Implemente um modelo em **Java** aplicando os princípios **SOLID**, separando r
 ## **Sugestão de Estrutura do Modelo**
 Para ajudar no desenvolvimento, siga a estrutura abaixo:
 
-1. **Classe `Pedido`**: Representa um pedido no sistema.
-2. **Interface `DescontoStrategy` e Implementações (`DescontoClienteComum`, `DescontoClienteVip`)**: Define regras de desconto baseadas no tipo de cliente.
+1. **Classe `aplicacao.pedidos.Pedido`**: Representa um pedido no sistema.
+2. **Interface `utilidades.desconto.DescontoStrategy` e Implementações (`utilidades.desconto.DescontoClienteComum`, `DescontoClienteVip`)**: Define regras de desconto baseadas no tipo de cliente.
 3. **Interface `Notificador` e Implementações (`EmailNotificador`, `SmsNotificador`)**: Permite o envio de notificações por e-mail ou SMS.
-4. **Classe `PedidoRepository`**: Responsável por salvar pedidos no banco de dados.
-5. **Classe `ProcessadorDePedidos`**: Gerencia a criação e finalização de pedidos, utilizando os serviços de desconto e notificação.
+4. **Classe `aplicacao.pedidos.PedidoRepository`**: Responsável por salvar pedidos no banco de dados.
+5. **Classe `aplicacao.pedidos.ProcessadorDePedidos`**: Gerencia a criação e finalização de pedidos, utilizando os serviços de desconto e notificação.
 
 ---
 

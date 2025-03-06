@@ -1,3 +1,7 @@
+package aplicacao.pedidos;
+
+import utilidades.pagamentos.Invoice;
+
 import java.util.ArrayList;
 
 // 4. Classe responsável por salvar pedidos no banco de dados - sequencialmente, deve ser a ultima classe a ser invocada
