@@ -11,7 +11,7 @@ import utilidades.notificaocoes.Notificator;
 //1 - Classe produto representa um pedido no sistema
 //depois que o pedido e gerado, nao e admissivel altera-lo em qualquer outra parte do codigo, salvo o seu cancelamento
 //por completo
-public class Pedido implements Invoice, cliente {
+public class Pedido implements Invoice{
 
     //instanciacao dos Modulos
     private Notificator notificator;

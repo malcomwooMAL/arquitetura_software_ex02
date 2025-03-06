@@ -6,7 +6,7 @@ public interface cliente {
      String clienteId= "";
      String email ="";
     String telefone ="";
-    public default cliente getClienteId() throws IdVazioException {
+    public default String getClienteId() throws IdVazioException {
         return clienteId;
     }
 }
